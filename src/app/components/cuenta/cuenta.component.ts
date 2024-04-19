@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cuenta } from 'src/app/models/cuenta.model';
 import { Usuario } from 'src/app/models/usuario.model';
@@ -10,19 +11,41 @@ import { CuentaService } from 'src/app/service/cuenta/cuenta.service';
   templateUrl: './cuenta.component.html',
   styleUrls: ['./cuenta.component.css']
 })
-export class CuentaComponent {
+export class CuentaComponent implements OnInit {
 
   listaDeCuentas: Array<Cuenta>;
-  public pagina =0;
+  public pagina = 0;
+  formRegCuenta;
 
-
-  constructor(private authService: AuthService, private cuentaService: CuentaService, private router: Router) {
+  constructor(private cuentaService: CuentaService, private formBuilder: FormBuilder) {
     this.listaDeCuentas = new Array();
     this.listarCuentas();
   }
 
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.formRegCuenta = this.formBuilder.group({
+      codCli: ['',Validators.required],
+      nomCli: ['',Validators.required],
+      nitCli: ['',Validators.required],
+      codCiu: ['',Validators.required],
+      codDep: ['',Validators.required],
+      codPai: ['',Validators.required],
+      di2Cli: ['',Validators.required],
+      te1Cli: ['',Validators.required],
+      tipCli: ['',Validators.required],
+      fecIng: ['',Validators.required],
+      eMail: ['',Validators.required],
+      tipIde: ['',Validators.required],
+      ap1Cli: ['',Validators.required],
+      nom1Cli: ['',Validators.required],
+      tipPer: ['',Validators.required],
+      estCli: ['',Validators.required],
+      codCliExtr: ['',Validators.required],
+      pagWeb: ['',Validators.required]
+
+    });
+
   }
 
   listarCuentas() {

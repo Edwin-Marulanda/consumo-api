@@ -1,9 +1,14 @@
-<div class="container w-75 ">
-    <div class="row">
+<div class="container mt-3 w-75 shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="row ">
         <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
+            <div class="container-fluid top-0 start-0">
                 <a class="navbar-brand">Prueba NovaSoft</a>
             </div>
+            <div class="pt-2 pe-2 position-absolute top-0 end-0">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                    data-bs-target="#modalRegistro">Nueva cuenta</button>
+            </div>
+
         </nav>
     </div>
     <div class="row">
@@ -13,7 +18,7 @@
             </div>
         </div>
         <div class="row">
-            <div *ngFor="let cuenta in listaDeCuentas | paginate: { itemsPerPage: 5, currentPage: page }">
+            <div *ngFor="let cuenta in listaDeCuentas | paginate: { itemsPerPage: 12, currentPage: page }">
                 <div class="col-2">
                     <div class="card">
                         <div class="card-title">
@@ -26,10 +31,74 @@
                     </div>
                 </div>
             </div>
-            <pagination-controls (pageChange)="pagina = $event" previousLabel="Anterior"
-                nextLabel="Siguiente"></pagination-controls>
+            <div class="d-flex justify-content-center">
+
+                <pagination-controls (pageChange)="pagina = $event" previousLabel="Anterior"
+                    nextLabel="Siguiente"></pagination-controls>
+            </div>
         </div>
 
 
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade " id="modalRegistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalRegistroLabel">Registro de cuenta</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formRegCuenta">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <label for="codCli" class="form-label">codCli</label>
+                                <input type="text" formControlName="codCli" class="form-control" placeholder="codCli"
+                                    id="codCli">
+                            </div>
+                            <div class="col-4">
+                                <label for="nomCli" class="form-label">nomCli</label>
+                                <input type="text" formControlName="nomCli" class="form-control" placeholder="nomCli"
+                                    id="nomCli">
+                            </div>
+                            <div class="col-4">
+                                <label for="nitCli" class="form-label">nitCli</label>
+                                <input type="text" formControlName="nitCli" class="form-control"
+                                    placeholder="nitCli" id="nitCli">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <label for="codCiu" class="form-label">codCiu</label>
+                                <input type="text" formControlName="codCiu" class="form-control" placeholder="codCiu"
+                                    id="codCiu">
+                            </div>
+                            <div class="col-4">
+                                <label for="codDep" class="form-label">codDep</label>
+                                <input type="text" formControlName="codDep" class="form-control" placeholder="codDep"
+                                    id="codDep">
+                            </div>
+                            <div class="col-4">
+                                <label for="codPai" class="form-label">codPai</label>
+                                <input type="text" formControlName="codPai" class="form-control"
+                                    placeholder="codPai" id="codPai">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Registrar cuenta</button>
+            </div>
+        </div>
     </div>
 </div>
