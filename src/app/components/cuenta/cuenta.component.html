@@ -25,9 +25,24 @@
                             <h4>{{cuenta.nomCli}}</h4>
                         </div>
                         <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    {{cuenta.nomCli}} {{cuenta.ap1Cli}}
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    {{cuenta.te1Cli}}
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    {{cuenta.eMail}}
+                                </div>
+                            </div>
 
                         </div>
-                        <button class="btn btn-primary" disable>Editar</button>
+                        <button class="btn btn-primary" (click)="verInformacion(cuenta)">Ver información</button>
                     </div>
                 </div>
             </div>
@@ -55,36 +70,104 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-4 mb-3">
-                                <label for="codCli" class="form-label">codCli</label>
-                                <input type="text" formControlName="codCli" class="form-control" placeholder="codCli"
-                                    id="codCli">
+                                <label for="codCli" class="form-label">Código Cliente</label>
+                                <input type="text" formControlName="codCli" class="form-control"
+                                    placeholder="codigo Cliente" id="codCli">
                             </div>
                             <div class="col-4">
-                                <label for="nomCli" class="form-label">nomCli</label>
-                                <input type="text" formControlName="nomCli" class="form-control" placeholder="nomCli"
-                                    id="nomCli">
+                                <label for="nomCli" class="form-label">Nombres del cliente</label>
+                                <input type="text" formControlName="Nombres del cliente" class="form-control"
+                                    placeholder="nomCli" id="nomCli">
                             </div>
                             <div class="col-4">
-                                <label for="nitCli" class="form-label">nitCli</label>
+                                <label for="nitCli" class="form-label">Nit del cliente</label>
                                 <input type="text" formControlName="nitCli" class="form-control"
-                                    placeholder="nitCli" id="nitCli">
+                                    placeholder="Nit del cliente" id="nitCli">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-4 mb-3">
-                                <label for="codCiu" class="form-label">codCiu</label>
+                                <label for="codCiu" class="form-label">Codigo de la ciudad</label>
                                 <input type="text" formControlName="codCiu" class="form-control" placeholder="codCiu"
                                     id="codCiu">
                             </div>
                             <div class="col-4">
-                                <label for="codDep" class="form-label">codDep</label>
-                                <input type="text" formControlName="codDep" class="form-control" placeholder="codDep"
-                                    id="codDep">
+                                <label for="codDep" class="form-label">Codigo departamento</label>
+                                <input type="text" formControlName="Código departamento" class="form-control"
+                                    placeholder="codDep" id="codDep">
                             </div>
                             <div class="col-4">
-                                <label for="codPai" class="form-label">codPai</label>
-                                <input type="text" formControlName="codPai" class="form-control"
+                                <label for="codPai" class="form-label">Codigo país</label>
+                                <input type="text" formControlName="código país" class="form-control"
                                     placeholder="codPai" id="codPai">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <label for="di2Cli" class="form-label">Dirección</label>
+                                <input type="text" formControlName="di2Cli" class="form-control" placeholder="di2Cli"
+                                    id="di2Cli">
+                            </div>
+                            <div class="col-4">
+                                <label for="te1Cli" class="form-label">Telefono</label>
+                                <input type="text" formControlName="te1Cli" class="form-control" placeholder="Telefono"
+                                    id="te1Cli">
+                            </div>
+                            <div class="col-4">
+                                <label for="tipCli" class="form-label">Tipo cliente</label>
+                                <input type="number" formControlName="tipCli" class="form-control"
+                                    placeholder="Tipo cliente" id="tipCli">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <label for="fecIng" class="form-label">Fecha ingreso</label>
+                                <input type="date" formControlName="fecIng" class="form-control"
+                                    placeholder="Fecha ingreso" id="fecIng">
+                            </div>
+                            <div class="col-4">
+                                <label for="eMail" class="form-label">e-mail</label>
+                                <input type="text" formControlName="eMail" class="form-control" placeholder="e-mail"
+                                    id="eMail">
+                            </div>
+                            <div class="col-4">
+                                <label for="tipIde" class="form-label">Tipo identificación</label>
+                                <input type="text" formControlName="Tipo identificación" class="form-control"
+                                    placeholder="tipIde" id="tipIde">
+                            </div>
+                            <div class="row">
+                                <div class="col-4 mb-3">
+                                    <label for="ap1Cli" class="form-label">Apellido cliente</label>
+                                    <input type="text" formControlName="ap1Cli" class="form-control"
+                                        placeholder="ap1Cli" id="ap1Cli">
+                                </div>
+                                <div class="col-4">
+                                    <label for="nom1Cli" class="form-label">Nombre del cliente</label>
+                                    <input type="text" formControlName="nom1Cli" class="form-control"
+                                        placeholder="Nombre del cliente" id="nom1Cli">
+                                </div>
+                                <div class="col-4">
+                                    <label for="tipPer" class="form-label">Tipo identificación</label>
+                                    <input type="number" formControlName="tipPer" class="form-control"
+                                        placeholder="Tipo identificación" id="tipPer">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 mb-3">
+                                    <label for="estCli" class="form-label">Estado cliente</label>
+                                    <input type="text" formControlName="estCli" class="form-control"
+                                        placeholder="Estado cliente" id="estCli">
+                                </div>
+                                <div class="col-4">
+                                    <label for="codCliExtr" class="form-label">codCliExtr</label>
+                                    <input type="text" formControlName="codCliExtr" class="form-control"
+                                        placeholder="codCliExtr" id="codCliExtr">
+                                </div>
+                                <div class="col-4">
+                                    <label for="pagWeb" class="form-label">Página web</label>
+                                    <input type="text" formControlName="pagWeb" class="form-control"
+                                        placeholder="Página web" id="pagWeb">
+                                </div>
                             </div>
                         </div>
 
@@ -97,7 +180,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Registrar cuenta</button>
+                <button type="button" class="btn btn-primary" (click)="registrarCuenta()">Registrar cuenta</button>
             </div>
         </div>
     </div>

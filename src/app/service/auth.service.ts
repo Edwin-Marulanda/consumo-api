@@ -13,8 +13,6 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-
-
   login(usuario:Usuario): Observable<any> {
     return this.http.post<any>(`${base_url}Cuenta/Login`, { "userLogin": usuario.userLogin,
     "password": usuario.password,
