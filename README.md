@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Uso de postman
+![image](https://github.com/Edwin-Marulanda/consumo-api/assets/139793067/3a7fc770-4581-41fc-9d34-648ca811a5b8)
+
+![image](https://github.com/Edwin-Marulanda/consumo-api/assets/139793067/637d13b9-952c-4fc4-a721-1f0d9eb338f7)
+
+![image](https://github.com/Edwin-Marulanda/consumo-api/assets/139793067/eb85844b-aaa4-42f0-b119-34940e8ac87f)
+
