@@ -1,4 +1,35 @@
+<div class="container w-75 ">
+    <div class="row">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand">Prueba NovaSoft</a>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="row pt-4">
+            <div class="col-12 h5 d-flex justify-content-center">
+                Listado de cuentas
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let cuenta in listaDeCuentas | paginate: { itemsPerPage: 5, currentPage: page }">
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-title">
+                            <h4>{{cuenta.nomCli}}</h4>
+                        </div>
+                        <div class="card-body">
 
-<p>cuenta works!</p>
+                        </div>
+                        <button class="btn btn-primary" disable>Editar</button>
+                    </div>
+                </div>
+            </div>
+            <pagination-controls (pageChange)="pagina = $event" previousLabel="Anterior"
+                nextLabel="Siguiente"></pagination-controls>
+        </div>
 
-<button (click)="enviar()">prueba</button>
+
+    </div>
+</div>

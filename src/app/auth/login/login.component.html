@@ -1,0 +1,30 @@
+
+<div class="container d-flex justify-content-center align-items-center h-content">
+    <div class="row w-25">
+        <div class="col-12 ">
+            <form [formGroup]="formLogin" class="shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="mb-3">
+                    <label for="userLogin" class="form-label">User</label>
+                    <input type="text" formControlName="userName" class="form-control" placeholder="Enter username" id="userLogin">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" formControlName="password" class="form-control" placeholder="Enter password" id="password">
+                </div>
+                <div class="mb-3">
+                    <label for="connectionname" class="form-label">Connection name</label>
+                    <input type="text" formControlName="connectionName" class="form-control" placeholder="Enter connection name" id="connectionname">
+                </div>
+                <div class="mb-3 d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="login()">Login</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+</div>

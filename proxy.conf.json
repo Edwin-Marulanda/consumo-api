@@ -1,7 +1,8 @@
 {
-    "/api": {
-      "target": "https://test.novasoft.com.co:8091/WebAPI",
-      "secure": false
+    "/WebAPI/api/*": {
+      "target": "https://test.novasoft.com.co:8091",
+      "secure": false,
+      "changeOrigin": true
     }
   }
   
